@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <script defer src="tictac.js"></script>
+    <title>Tic Tac Toe Game using HTML CSS & JS</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+        <div id="gameboard">
+            <div class="box" id="0"></div>
+            <div class="box" id="1"></div>
+            <div class="box" id="2"></div>
+            <div class="box" id="3"></div>
+            <div class="box" id="4"></div>
+            <div class="box" id="5"></div>
+            <div class="box" id="6"></div>
+            <div class="box" id="7"></div>
+            <div class="box" id="8"></div>
+
+            <div class="modal">
+                <div class="content">
+                    <h2 class="message">Congtratulation Player X</h2>
+                    <p>You've Won the Game :)</p>
+                    <button id="restartbtn">Restart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ruda:wght@400;600;700&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orangeColor: #1b651d;
+    --darkColor: #87187c;
+}
+
+body {
+    background: rgb(131, 195, 12);
+    background: radial-gradient( circle, rgb(176, 90, 20) 0%, rgb(234, 10, 10) 55%, rgb(37, 53, 192) 100%);
+    font-family: "poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container h1 {
+    font-size: 3.5rem;
+    color: #e8f71b;
+}
+
+#gameboard {
+    width: 650px;
+    padding: 2rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(26, 208, 117, 0.5);
+    border-radius: 5px;
+    position: relative;
+}
+
+.box {
+    height: 130px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--darkColor);
+    background-color: var(--orangeColor);
+    font-weight: 600;
+    font-size: 5.5rem;
+    margin: 0.5rem;
+    box-shadow: 2px 5px 5px #690d0d;
+    border-radius: 5px;
+}
+
+.container.success .box {
+    cursor: not-allowed;
+}
+
+.modal {
+    position: absolute;
+    width: 650px;
+    height: 400px;
+    background-color: #f8f8eb;
+    border-radius: 5px;
+    box-shadow: 5px 10px 10px #000;
+    opacity: 0;
+    transform: translateX(500%);
+    transition: all 0.8s ease-in;
+}
+
+.container.success .modal {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content h2 {
+    font-size: 2.5rem;
+}
+
+button {
+    outline: none;
+    border: none;
+    padding: 0.8rem 4rem;
+    margin-top: 2rem;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1.2rem;
+    width: 320px;
+    cursor: pointer;
+    background-color: var(--orangeColor);
+    color: var(--darkColor);
+    font-weight: 600;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+</style>
